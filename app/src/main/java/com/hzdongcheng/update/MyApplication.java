@@ -19,7 +19,7 @@ public class MyApplication extends Application {
             SDCARD_PATH = Environment.getDataDirectory().toString();
         }
 
-        Log4jUtils.initLog4jInAndroid(SDCARD_PATH + HOME_PATH + "/logs/applicationmanager/log");
+        Log4jUtils.initLog4jInAndroid(SDCARD_PATH + HOME_PATH + "/logs/updata/log");
         Log4jUtils log4jUtils = Log4jUtils.createInstanse(this.getClass());
         log4jUtils.info("**********************************");
         log4jUtils.info("**********应用程序已启动************");

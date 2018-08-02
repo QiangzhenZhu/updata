@@ -13,7 +13,6 @@ import com.hzdongcheng.update.bean.ServicesTaskCollector;
 
 public class PackageInstallReceiver extends BroadcastReceiver {
     private static final String TAG = "PackageInstallReceiver";
-    public static final String dz = "com.hzdongcheng.parcellocker";
     private Log4jUtils log4jUtils;
 
     public PackageInstallReceiver() {
@@ -25,8 +24,7 @@ public class PackageInstallReceiver extends BroadcastReceiver {
         //接收安装广播
         if (intent.getAction().equals("android.intent.action.PACKAGE_ADDED")) {
             String packageName = intent.getDataString().split(":")[1];
-            log4jUtils.debug("BroadCastReceiver onReceiver install :" + packageName);
-            Log.e(TAG, "onReceive: install over:" + packageName);
+            log4jUtils.debug("PackageInstallReceiver: install " + packageName);
             try {
                 ServicesTask servicesTask = ServicesTaskCollector.getInstance().GetServicesTask(packageName);
                 if (servicesTask != null && servicesTask.getForceStart()) {
@@ -53,8 +51,7 @@ public class PackageInstallReceiver extends BroadcastReceiver {
         //接收卸载广播
         if (intent.getAction().equals("android.intent.action.PACKAGE_REMOVED")) {
             String packageName = intent.getDataString().split(":")[1];
-            log4jUtils.debug("onReceiver: remove over: " + packageName);
-            Log.e(TAG, "onReceive: remove over:" + packageName);
+            log4jUtils.debug("PackageInstallReceiver: remove " + packageName);
 
 
         }

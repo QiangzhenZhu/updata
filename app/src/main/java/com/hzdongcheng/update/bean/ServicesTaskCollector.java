@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ServicesTaskCollector {
+    private static final String TAG = "ServicesTaskCollector";
     private static ServicesTaskCollector collector = null;
     private List<ServicesTask> taskList;
     private ServicesTaskCollector(){
@@ -35,7 +36,7 @@ public class ServicesTaskCollector {
                 return task;
             }
         }
-        throw new RuntimeException("错误：找不到与packageName相同包名的ServisesTask实例" );
+        throw new RuntimeException(TAG+" 错误：找不到与packageName相同包名的ServisesTask实例" );
     }
 
     public void removeServiccesTask(String packageName){

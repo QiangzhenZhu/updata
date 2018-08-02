@@ -66,7 +66,7 @@ public class MyIntentService extends Service {
         OkHttpUtils.get()
                 .url(servicesTask.getDowloadUrl())
                 .build()
-                .execute(new FileCallBack(Environment.getExternalStorageDirectory().getAbsolutePath(),servicesTask.getDowloadUrl().split("/")[servicesTask.getDowloadUrl().split("/").length - 1] )//
+                .execute(new FileCallBack(getExternalCacheDir().getAbsolutePath(),servicesTask.getDowloadUrl().split("/")[servicesTask.getDowloadUrl().split("/").length - 1] )//
                 {
                     @Override
                     public void inProgress(float progress, long total, int id) {
@@ -84,10 +84,6 @@ public class MyIntentService extends Service {
                     @Override
                     public void onResponse(final File response, int id) {
                         log4jUtils.info(TAG+" 安装包下载完成");
-                        GetPackageInfoHelper.getPackageInfo(MyIntentService.this,response.getPath());
-                        log4jUtils.debug(TAG+" 解析安装包信息："+"PackageName: "+GetPackageInfoHelper.apkPackageName
-                                +" VersionCode: " + GetPackageInfoHelper.versionCode + " VersionName: "
-                                + GetPackageInfoHelper.versionName);
                         ServicesTask task = null;
                         try{
                              task = ServicesTaskCollector.getInstance().GetServicesTask(GetPackageInfoHelper.apkPackageName);

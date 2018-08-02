@@ -34,20 +34,19 @@ public class InstallHelper {
             IPackageInstallObserver installObserver = new IPackageInstallObserver.Stub() {
                 @Override
                 public void packageInstalled(String packageName, int returnCode) throws RemoteException {
-                    //这个方法回调后不代表程序安装成功，这里仅作为一种通知处理，安装是否成功，已PackageInstallReceiver里是否监听到到消息为准；
+                    //这个方法回调后不代表程序安装成功，这里仅作为一种通知处理，安装是否成功，以PackageInstallReceiver里是否监听到到消息为准；
                     helper.onSuccess();
                     log4jUtils.debug(TAG+ "："+packageName+"  returnCode："+returnCode);
                 }
             };
             GetPackageInfoHelper.getPackageInfo(context,apkPath);
-            log4jUtils.debug("PackageName: "+GetPackageInfoHelper.apkPackageName
+            log4jUtils.debug(TAG +"解析安装包基本信息："+ "PackageName: "+GetPackageInfoHelper.apkPackageName
             +" VersionCode: " + GetPackageInfoHelper.versionCode + " VersionName: "
                     + GetPackageInfoHelper.versionName);
             iPm.installPackage(Uri.fromFile(apkFile), installObserver, 2,
                     apkFile.getPath());
         } catch (Exception e) {
             log4jUtils.error(TAG+ " 安装失败："+e.getMessage());
-            Log.e(TAG, "execute: "+e);
             helper.onError(e);
         }
     }
