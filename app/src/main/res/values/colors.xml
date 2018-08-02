@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="tv_rv_item_launcher_name">#000000</color>
+    <color name="process_running">#3ddb39</color>
+    <color name="process_stopping">#EE3B3B</color>
+    <color name="black_overlay">#66000000</color>
+</resources>

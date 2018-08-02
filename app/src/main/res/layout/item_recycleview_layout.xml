@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_item_rv"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="20dp"
+    android:layout_gravity="center_horizontal"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:id="@+id/iv_item_launcher_icon"
+            android:src="@mipmap/ic_launcher"
+            android:layout_marginLeft="20dp"
+            android:layout_width="56dp"
+            android:layout_height="56dp" />
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="4dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/tv_item_launcher_name"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="16dp"
+                android:text="@string/string_tv_item_launcher_name"
+                android:textSize="26sp" />
+
+            <TextView
+                android:id="@+id/tv_item_current_version"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/tv_item_launcher_name"
+                android:layout_marginLeft="50dp"
+                android:gravity="left"
+                android:singleLine="true"
+                android:textSize="26sp" />
+            <TextView
+                android:id="@+id/tv_item_application_running_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/tv_item_current_version"
+                android:layout_marginLeft="150dp"
+                android:textSize="26sp" />
+            <TextView
+                android:id="@+id/tv_item_applicaiton_update_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/tv_item_application_running_status"
+                android:layout_marginLeft="8dp"
+                android:textSize="16sp"
+                />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

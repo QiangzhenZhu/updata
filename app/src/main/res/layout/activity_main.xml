@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     android:orientation="vertical"
+     android:id="@+id/ll_activity_main"
+     android:background="#F5F5F5"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        >
+        <ImageButton
+            android:id="@+id/ib_back"
+            android:layout_marginLeft="32dp"
+            android:background="@drawable/bg_back"
+            android:src="@drawable/back"
+            android:layout_width="56dp"
+            android:layout_height="56dp" />
+        <ImageButton
+            android:id="@+id/ib_config"
+            android:layout_marginRight="32dp"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/bg_back"
+            android:src="@drawable/ic_config"
+            android:layout_width="56dp"
+            android:layout_height="56dp" />
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv"
+        android:layout_marginTop="180dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </android.support.v7.widget.RecyclerView>
+    <TextView
+        android:id="@+id/tv_check_up_all"
+        android:layout_marginTop="120dp"
+        android:layout_gravity="center_horizontal"
+        android:text="检查更新"
+        android:background="@drawable/item_recycleview_status_textview_drawable"
+        android:textColor="@color/process_running"
+        android:padding="18dp"
+        android:textSize="24sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <ProgressBar
+        android:id="@+id/pg_update"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="120dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:indeterminateDrawable="@drawable/bg_progress_bar"
+        />
+    <TextView
+        android:id="@+id/tv_check_info"
+        android:layout_marginTop="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textSize="28sp"
+        />
+
+</LinearLayout>
